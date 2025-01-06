@@ -1,4 +1,4 @@
-package fim_auth
+package auth_model
 
 import "fimCommunication-microService/common/model"
 
