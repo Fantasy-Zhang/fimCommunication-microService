@@ -3,40 +3,44 @@ type LoginRequest {
 	Password string `json:"password"`
 }
 
-type Response {
-	Code int    `json:"code"`
-	Data string `json:"data"`
-	Msg  string `json:"msg"`
-}
-
-type AuthenticationResponse {
-	Code int    `json:"code"`
-	Data string `json:"data"`
-	Msg  string `json:"msg"`
-}
-
-type LoginInfo {
+//type Response {
+// Code int    `json:"code"`
+// Data string `json:"data"`
+// Msg  string `json:"msg"`
+//}
+//type AuthenticationResponse {
+// Code int    `json:"code"`
+// Data string `json:"data"`
+// Msg  string `json:"msg"`
+//}
+//type LoginInfo {
+// Token string `json:"token"`
+//}
+type LoginResponse {
 	Token string `json:"token"`
 }
 
-type LoginResponse {
-	Code int       `json:"code"`
-	Data LoginInfo `json:"data"`
-	Msg  string    `json:"msg"`
-}
-
-type OpenLoginInfo {
+//type LoginResponse {
+// Code int       `json:"code"`
+// Data LoginInfo `json:"data"`
+// Msg  string    `json:"msg"`
+//}
+//type OpenLoginInfo {
+// Name string `json:"name"`
+// Icon string `json:"icon"`
+// Href string `json:"href"` //跳转地址
+//}
+type OpenLoginInfoResponse {
 	Name string `json:"name"`
 	Icon string `json:"icon"`
 	Href string `json:"href"` //跳转地址
 }
 
-type OpenLoginInfoResponse {
-	Code int           `json:"code"`
-	Data OpenLoginInfo `json:"data"`
-	Msg  string        `json:"msg"`
-}
-
+//type OpenLoginInfoResponse {
+// Code int           `json:"code"`
+// Data OpenLoginInfo `json:"data"`
+// Msg  string        `json:"msg"`
+//}
 service auth {
 	// 登录
 	@handler login
@@ -44,15 +48,17 @@ service auth {
 
 	// 认证
 	@handler authentication
-	post /api/auth/authentication returns (Response)
+	post /api/auth/authentication returns (string)
 
 	// 注销
 	@handler logout
-	post /api/auth/logout returns (Response)
+	// post /api/auth/logout returns (Response)
+	post /api/auth/logout returns (string)
 
 	//第三方登录信息
 	@handler open_login_info
-	get /api/auth/open_login_info returns (OpenLoginInfoResponse)
+	// get /api/auth/open_login_info returns (OpenLoginInfoResponse)
+	get /api/auth/open_login_info returns ([]OpenLoginInfoResponse)
 
 	//第三方登录
 	@handler open_login

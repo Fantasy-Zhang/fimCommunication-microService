@@ -18,7 +18,8 @@ func main() {
 	flag.Parse()
 
 	if opt.DB {
-		db := core.InitGorm()
+		//db := core.InitGorm()
+		db := core.InitGorm("")
 		err := db.AutoMigrate(
 			&user_model.UserModel{},
 			&user_model.UserConfModel{},
