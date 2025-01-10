@@ -16,4 +16,9 @@ type Config struct {
 		Password string
 		DB       int
 	}
+	OpenLoginList []struct {
+		Href string `json:"href"`
+		Icon string `json:"icon"`
+		Name string `json:"name"`
+	}
 }

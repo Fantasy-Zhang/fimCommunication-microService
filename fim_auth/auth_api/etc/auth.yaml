@@ -17,3 +17,7 @@ Redis:
   Password:
   DB: 0
 
+OpenLoginList:
+ - name: QQ登录
+   icon:
+   href:
