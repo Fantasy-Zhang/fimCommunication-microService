@@ -19,5 +19,15 @@ Redis:
 
 OpenLoginList:
  - name: QQ登录
-   icon:
-   href:
+   icon: https://www.fengfengzhidao.com/image/icon/qq.png
+   href: https://graph.qq.com/oauth2.0/show?whichaLogin&display=pcGresponse_type=codesclient id=1019745936redirect.uri=http://www.fengfengzhidao.com/login?flag=qq
+QQ:
+  AppID: 1019745936
+  AppKey:
+  Redirect: http://www.fengfengzhidao.com/login?flag=qq
+
+UserRpc:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: user.rpc

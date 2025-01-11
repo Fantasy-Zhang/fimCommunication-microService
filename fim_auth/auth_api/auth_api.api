@@ -41,6 +41,11 @@ type OpenLoginInfoResponse {
 // Data OpenLoginInfo `json:"data"`
 // Msg  string        `json:"msg"`
 //}
+type OpenLoginRequest {
+	Code string `json:"code"`
+	Flag string `json:"flag"` //登录标志
+}
+
 service auth {
 	// 登录
 	@handler login
@@ -62,7 +67,7 @@ service auth {
 
 	//第三方登录
 	@handler open_login
-	post /api/auth/open_login returns (LoginResponse)
+	post /api/auth/open_login (OpenLoginRequest) returns (LoginResponse)
 }
 
-// goctl api go -api v1.api -dir .
+// goctl api go -api auth_api.api -dir . --home ../../template
